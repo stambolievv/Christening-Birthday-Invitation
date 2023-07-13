@@ -1,0 +1,23 @@
+#landing {
+  max-width: 100%;
+  min-height: 100vh;
+
+  font-family: 'pudelinka', serif;
+}
+
+#landing .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 80vw;
+  min-height: 80vh;
+
+  font-size: min(10rem, min(20vw, 30vh));
+  line-height: 80%;
+  font-weight: normal;
+}
+
+#landing .heading span {
+  font-size: 150%;
+  line-height: 150%;
+}

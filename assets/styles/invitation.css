@@ -1,0 +1,28 @@
+#invitation {
+  margin-block: 25vmax;
+
+  font-family: 'university-cyrillic', serif;
+}
+
+#invitation .content {
+  width: 100%;
+  min-width: 60vw;
+
+  font-size: min(4rem, 10vw);
+  line-height: 80%;
+}
+
+#invitation p {
+  margin-block: 5%;
+}
+
+#invitation .recipient {
+  display: inline-block;
+  font-family: 'pudelinka', serif;
+}
+
+#invitation input.recipient {
+  max-width: 40%;
+  background-color: transparent;
+  font-size: inherit;
+}

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'disneypark';
+  src: url('/assets/fonts/disneypark.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'university-cyrillic';
+  src: url('/assets/fonts/university-cyrillic.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'pudelinka';
+  src: url('/assets/fonts/pudelinka.ttf') format('truetype');
+  font-display: swap;
+}
+
+:root {
+  --clr-primary-100: hsla(0, 0%, 100%, 1);
+  --clr-primary-200: hsla(0, 0%, 100%, 0.7);
+  --clr-primary-400: hsla(209, 73%, 88%, 1);
+  --clr-primary-600: hsla(216, 56%, 61%, 1);
+  --clr-primary-800: hsla(218, 28%, 28%, 1);
+  --clr-primary-900: hsla(0, 0%, 0%, 1);
+
+  --border-spacing: 8%;
+  --background-cloud-spacing: 5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  color-scheme: only light;
+}
+
+body {
+  color: var(--clr-primary-800);
+  text-align: center;
+  background: url('/assets/images/background.png');
+  background-color: var(--clr-primary-400);
+}
+
+main,
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  margin-inline: var(--border-spacing);
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
+footer {
+  width: 100%;
+  border-radius: 30% 30% 0 0;
+  background: var(--clr-primary-800);
+}
+
+footer p {
+  margin: 2vh;
+  color: var(--clr-primary-100);
+  font-family: 'disneypark', serif;
+  font-size: min(2rem, 8vw);
+  line-height: 80%;
+  font-style: italic;
+}
+
+.background-cloud {
+  padding: var(--background-cloud-spacing);
+  background-color: var(--clr-primary-200);
+  border-radius: 50px;
+  box-shadow: 10px 10px 40px var(--clr-primary-200), -10px -10px 40px var(--clr-primary-200);
+}

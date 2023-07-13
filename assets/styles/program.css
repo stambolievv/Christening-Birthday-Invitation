@@ -1,0 +1,56 @@
+#program {
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  gap: 10vmax;
+
+  font-family: 'disneypark', serif;
+}
+
+#program .headline {
+  width: 100%;
+  margin-block-end: 10%;
+
+  font-size: min(10rem, 30vw);
+}
+
+#program .card {
+  flex: 1;
+  align-self: stretch;
+}
+
+#program .card .caption {
+  color: var(--clr-primary-600);
+  font-size: min(9rem, 16vw);
+  font-weight: normal;
+}
+
+#program .card .icon {
+  margin-block: 5%;
+}
+
+#program .card .description {
+  margin-block-end: 5%;
+
+  font-family: 'university-cyrillic', serif;
+  font-size: min(4rem, 10vw);
+  font-weight: normal;
+}
+
+#program .card .sub-description {
+  position: relative;
+
+  font-size: min(2rem, 8vw);
+  font-style: italic;
+}
+
+#program .card .sub-description::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-primary-800);
+}

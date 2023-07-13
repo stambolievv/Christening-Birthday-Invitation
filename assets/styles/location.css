@@ -1,0 +1,28 @@
+#location .map-container {
+  width: 100%;
+}
+
+#location .map-container .map-name {
+  margin-block: 1%;
+
+  font-family: 'university-cyrillic', serif;
+  font-size: min(3rem, 10vw);
+  font-weight: normal;
+  font-style: italic;
+}
+
+#location .map-container .map {
+  width: 100%;
+  height: 60vh;
+  max-width: 1000px;
+
+  border: none;
+}
+
+#location .separator {
+  margin-block: min(20vw, 20%);
+}
+
+#location .separator:last-child {
+  margin-block-end: 0;
+}
