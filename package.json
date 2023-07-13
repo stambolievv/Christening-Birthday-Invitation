@@ -1,7 +1,7 @@
 {
-  "name": "christening-invitation",
+  "name": "christening-birthday-invitation",
   "version": "1.0.0",
-  "description": "Beautiful Custom Paperless Christening Invitation.",
+  "description": "Beautiful Custom Paperless Christening-Birthday Invitation.",
   "main": "index.html",
   "private": true,
   "type": "module",
@@ -19,6 +19,8 @@
   "author": "Eleonora Atanasova & Deyan Stamboliev",
   "license": "Apache-2.0",
   "keywords": [
+    "birthday",
+    "year",
     "christening",
     "baptise",
     "invitation",
@@ -29,10 +31,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stambolievv/Christening-Invitation.git"
+    "url": "git+https://github.com/stambolievv/Christening-Birthday-Invitation.git"
   },
   "bugs": {
-    "url": "https://github.com/stambolievv/Christening-Invitation/issues"
+    "url": "https://github.com/stambolievv/Christening-Birthday-Invitation/issues"
   },
   "dependencies": {
     "lit": "^2.6.1",

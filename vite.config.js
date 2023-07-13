@@ -16,7 +16,7 @@ const banner = `
 `.trim();
 const outputFolder = 'dist'; // Specify the output directory (relative to project root).
 const assetsFolder = 'assets'; // Specify the assets folder (relative to project root).
-const publicPath = process.env.BRANCH === 'gh-pages' ? '/Christening-Invitation/' : '/' // The name of the Github repository
+const publicPath = process.env.BRANCH === 'gh-pages' ? '/Christening-Birthday-Invitation/' : '/' // The name of the Github repository
 
 export default defineConfig({
   base: publicPath,
