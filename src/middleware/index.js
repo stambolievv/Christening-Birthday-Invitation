@@ -1,2 +1,2 @@
 export { decorateContext } from './context';
-export { initParticles } from './backgroundParticles';
+export { preloadBorderImages, createBorderImages } from './borderImages';
