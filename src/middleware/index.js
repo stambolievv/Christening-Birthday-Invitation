@@ -1,2 +1,2 @@
 export { decorateContext } from './context';
-export { preloadBorderImages, createBorderImages } from './borderImages';
+export { createBorderImages } from './borderImages';

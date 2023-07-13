@@ -48,13 +48,33 @@ class BorderImages {
    * @returns {Promise} A promise that resolves when all images are loaded.
    */
   async load(source) {
-    this.#images = await this.#loadImages(source);
+    const responses = await Promise.all(source.map(source => fetch(source)));
+    const fileBlobs = await Promise.all(responses.map(response => response.blob()));
+    const base64 = await Promise.all(fileBlobs.map(fileBlob => this.#convertToBase64(fileBlob)));
+
+    this.#images = await this.#loadImages(base64);
     this.#generateBorderImages();
 
     screen.orientation.addEventListener('change', () => {
       window.addEventListener('resize', () => {
         this.#generateBorderImages();
       }, { once: true });
+    });
+  }
+
+  /**
+   * @description Retrieves the base64 representation of the given blob.
+   * @param {Blob} blob - The Blob object to convert.
+   * @returns {Promise<string>} - A promise that resolves with the base64-encoded string.
+   */
+  #convertToBase64(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.addEventListener('load', () => resolve(/**@type {string}*/(reader.result)));
+      reader.addEventListener('error', reject);
+
+      reader.readAsDataURL(blob);
     });
   }
 
@@ -130,38 +150,15 @@ class BorderImages {
 }
 
 /**
- * @description Loads the images from the provided sources in base64 format.
- * @param {PageJS.Context} ctx - The context object.
- * @param {Function} next - The next function in the middleware chain.
- */
-export function preloadBorderImages(ctx, next) {
-  const assets = config.borderImages.source.map(src => `${ctx.baseUrl}/assets/images/${src}`);
-
-  ctx.borderImages = new Promise((resolve, reject) => {
-    const worker = new Worker(new URL('../workers/imageLoader', import.meta.url));
-    worker.postMessage(assets);
-
-    worker.addEventListener('message', (event) => {
-      const { success, base64, error } = event.data;
-
-      worker.terminate();
-      success ? resolve(base64) : reject(error);
-    });
-  });
-
-  next();
-}
-
-/**
  * @description Creates the border images.
  * @param {PageJS.Context} ctx - The context object.
  * @param {Function} next - The next function in the middleware chain.
  */
 export function createBorderImages(ctx, next) {
-  const { borderImages: { name = 'custom-container', ...rest } } = config;
+  const { borderImages: { name = 'custom-container', source, ...rest } } = config;
 
-  const borderImages = new BorderImages({ name, config: rest });
-  ctx.borderImages.then((assets) => borderImages.load(assets));
+  const assets = config.borderImages.source.map(src => `${ctx.baseUrl}/assets/images/${src}`);
+  new BorderImages({ name, config: rest }).load(assets);
 
   next();
 }
