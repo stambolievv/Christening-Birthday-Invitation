@@ -5,8 +5,8 @@
 #location .map-container .map-name {
   margin-block: 1%;
 
-  font-family: 'university-cyrillic', serif;
-  font-size: min(3rem, 10vw);
+  font-family: 'GUERRILLA', serif;
+  font-size: min(3rem, 5vw);
   font-weight: normal;
   font-style: italic;
 }
@@ -20,7 +20,7 @@
 }
 
 #location .separator {
-  margin-block: min(20vw, 20%);
+  margin-block: min(20vw, 25%);
 }
 
 #location .separator:last-child {

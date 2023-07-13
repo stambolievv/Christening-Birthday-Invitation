@@ -1,24 +1,27 @@
 #invitation {
-  margin-block: 25vmax;
+  margin-block: 5vmax 25vmax;
 
-  font-family: 'university-cyrillic', serif;
+  font-family: 'SensaSans', serif;
+  font-weight: normal;
 }
 
 #invitation .content {
   width: 100%;
   min-width: 60vw;
 
-  font-size: min(4rem, 10vw);
-  line-height: 80%;
+  font-size: min(3rem, 5vw);
+  text-wrap: balance;
 }
 
 #invitation p {
-  margin-block: 5%;
+  margin-block: 7%;
 }
 
 #invitation .recipient {
   display: inline-block;
-  font-family: 'pudelinka', serif;
+  font-size: 190%;
+  font-family: 'GUERRILLA', serif;
+  color: var(--clr-accent);
 }
 
 #invitation input.recipient {

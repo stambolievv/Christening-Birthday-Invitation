@@ -1,31 +1,33 @@
 @font-face {
-  font-family: 'disneypark';
-  src: url('/assets/fonts/disneypark.ttf') format('truetype');
+  font-family: 'SensaSans';
+  src: url('/assets/fonts/SensaSans.ttf') format('truetype');
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: 'GUERRILLA';
+  src: url('/assets/fonts/GUERRILLA.ttf') format('truetype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'university-cyrillic';
-  src: url('/assets/fonts/university-cyrillic.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'pudelinka';
-  src: url('/assets/fonts/pudelinka.ttf') format('truetype');
+  font-family: 'ArtNouveauBistro';
+  src: url('/assets/fonts/ArtNouveauBistro.ttf') format('truetype');
   font-display: swap;
 }
 
 :root {
-  --clr-primary-100: hsla(0, 0%, 100%, 1);
-  --clr-primary-200: hsla(0, 0%, 100%, 0.7);
-  --clr-primary-400: hsla(209, 73%, 88%, 1);
-  --clr-primary-600: hsla(216, 56%, 61%, 1);
-  --clr-primary-800: hsla(218, 28%, 28%, 1);
-  --clr-primary-900: hsla(0, 0%, 0%, 1);
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-300: hsl(43, 100%, 95%);
+  --clr-primary-500: hsl(84, 41%, 68%);
+  --clr-primary-600: hsl(108, 34%, 31%);
+  --clr-primary-700: hsl(136, 24%, 27%);
+  --clr-primary-800: hsl(119, 49%, 18%);
+  --clr-primary-900: hsl(0, 0%, 0%);
+  --clr-accent: hsl(29, 50%, 56%);
 
-  --border-spacing: 8%;
-  --background-cloud-spacing: 5%;
+  --border-spacing: 15%;
 }
 
 *,
@@ -44,8 +46,7 @@ html {
 body {
   color: var(--clr-primary-800);
   text-align: center;
-  background: url('/assets/images/background.png');
-  background-color: var(--clr-primary-400);
+  background-color: var(--clr-primary-300);
 }
 
 main,
@@ -68,21 +69,15 @@ img {
 footer {
   width: 100%;
   border-radius: 30% 30% 0 0;
-  background: var(--clr-primary-800);
+  background: var(--clr-primary-600);
 }
 
 footer p {
   margin: 2vh;
-  color: var(--clr-primary-100);
-  font-family: 'disneypark', serif;
-  font-size: min(2rem, 8vw);
+  color: var(--clr-primary-300);
+  font-family: 'GUERRILLA', serif;
+  font-size: min(2rem, 7vw);
   line-height: 80%;
   font-style: italic;
-}
-
-.background-cloud {
-  padding: var(--background-cloud-spacing);
-  background-color: var(--clr-primary-200);
-  border-radius: 50px;
-  box-shadow: 10px 10px 40px var(--clr-primary-200), -10px -10px 40px var(--clr-primary-200);
+  text-wrap: balance;
 }
